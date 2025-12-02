@@ -5,6 +5,6 @@ COPY package.json .
 COPY *.js .
 RUN npm install
 ENV MONGO="true" \
-    REDIS_URL="redis://redis:6379" \  <-- ADDED BACKSLASH
+    REDIS_URL="redis://redis:6379" \  <-- The backslash must be the absolute last non-newline character
     MONGO_URL="mongodb://mongodb:27017/users"
 CMD ["node", "server.js"]
